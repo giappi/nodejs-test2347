@@ -1,12 +1,12 @@
 
-var HttpServer   = require("./server/HTTPServer");
+var ServerEngine   = require("./server/ServerEngine");
 var SocketEngine = require("./server/SocketEngine");
 
 // create HTTP server
-var server = new HttpServer();
-server.setDocumentRoot(__dirname + '/document_root');
-server.start();
+var serverEngine = new ServerEngine();
+serverEngine.setDocumentRoot(__dirname + '/document_root');
+serverEngine.start();
 
 // create socket engine
-var socketEngine = new SocketEngine(server.getServer());
+var socketEngine = new SocketEngine(serverEngine.getServer());
 socketEngine.start();

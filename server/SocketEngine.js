@@ -84,6 +84,18 @@ module.exports = function(server)
                     });
                 }
             });
+            
+            socket.on('error', function()
+            {
+                console.log("socket.on: Connection Error!");
+            });
+            
+           
+        });
+        
+        io.on('error', function(e)
+        {
+            console.log("io.on: Connection Error!");
         });
     };
     
