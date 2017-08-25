@@ -2,7 +2,7 @@
 
 module.exports = function()
 {
-    var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000;
+    var port = +(process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT) || 3000;
     // Setup basic express server
     var Express = require('express');
     var appListener = new Express();
